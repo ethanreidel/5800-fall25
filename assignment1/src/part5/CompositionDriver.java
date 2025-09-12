@@ -1,7 +1,7 @@
-package src.part5;
+package part5;
 
-import src.part5.core.File;
-import src.part5.core.Folder;
+import part5.core.File;
+import part5.core.Folder;
 
 public class CompositionDriver {
 
@@ -49,17 +49,21 @@ public class CompositionDriver {
         demo1.addFolder(Include_path);
 
         demo1.addFolder(Remote_files);
+
+        //finished building file structure, printing below
+        System.out.println("INITIAL FILE STRUCTURE");
+
         int depth = 0;
         demo1.printChildren(demo1, depth);
         
-        System.out.println("\n\n\n\n----------\n\n\n\n");
+        System.out.println("\n----------\nREMOVING APP FOLDER");
                 
         demo1.removeFolder(app);
 
         depth = 0;
         demo1.printChildren(demo1, depth);
 
-        System.out.println("\n\n\n\n----------\n\n\n\n");
+        System.out.println("\n----------\nREMOVING PUBLIC FOLDER");
 
         demo1.removeFolder(public_);
 

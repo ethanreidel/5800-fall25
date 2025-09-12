@@ -1,4 +1,4 @@
-package src.part4.core;
+package part4.core;
 
 public class Instructor {
     private String first_name;

@@ -1,4 +1,4 @@
-package src.part3.core;
+package part3.core;
 
 public class Ship {
     private String ship_name;

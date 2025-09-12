@@ -1,4 +1,4 @@
-package src.part1.core;
+package part1.core;
 
 public class SalariedEmployee extends Employee {
     private int weekly_salary;

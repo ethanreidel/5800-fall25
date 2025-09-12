@@ -1,4 +1,4 @@
-package src.part1.core;
+package part1.core;
 
 public class Employee {
     //private to ensure data is encapsulated, prevents data from being accessed outside the class willynilly

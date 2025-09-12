@@ -1,11 +1,11 @@
-package src.part2;
+package part2;
 
 import java.util.ArrayList;
 //driver program
 
-import src.part2.core.Freelancer;
-import src.part2.core.Payable;
-import src.part2.core.VendorInvoice;
+import part2.core.Freelancer;
+import part2.core.Payable;
+import part2.core.VendorInvoice;
 
 public class InterfaceDriver {
     public static void main(String[] args) {

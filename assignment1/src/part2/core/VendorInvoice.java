@@ -1,4 +1,4 @@
-package src.part2.core;
+package part2.core;
 
 public class VendorInvoice implements Payable{
     private String vendor_name;

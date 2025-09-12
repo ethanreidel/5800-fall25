@@ -1,4 +1,4 @@
-package src.part5.core;
+package part5.core;
 
 public class File {
     private String name;

@@ -1,4 +1,4 @@
-package src.part1.core;
+package part1.core;
 
 public class BaseEmployee extends Employee {
     private int base_salary;

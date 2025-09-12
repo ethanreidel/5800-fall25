@@ -1,10 +1,10 @@
-package src.part1;
+package part1;
 //javac file_name to compile and java file_name to execute
 
-import src.part1.core.BaseEmployee;
-import src.part1.core.CommissionEmployee;
-import src.part1.core.HourlyEmployee;
-import src.part1.core.SalariedEmployee;
+import part1.core.BaseEmployee;
+import part1.core.CommissionEmployee;
+import part1.core.HourlyEmployee;
+import part1.core.SalariedEmployee;
 
 //all classes that extend employee have first, last and ssn and their own individual vars outlined in the doc
 

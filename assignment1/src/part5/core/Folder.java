@@ -1,4 +1,4 @@
-package src.part5.core;
+package part5.core;
 
 import java.util.ArrayList;
 
@@ -96,7 +96,6 @@ public class Folder {
             return false;
         }
 
-        //remove at index "at"
         kids.remove(at);
         clearSubtree(targetFolder);
         targetFolder.setParent(null);

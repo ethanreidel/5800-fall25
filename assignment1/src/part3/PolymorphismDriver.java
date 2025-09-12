@@ -1,8 +1,8 @@
-package src.part3;
+package part3;
 
-import src.part3.core.CargoShip;
-import src.part3.core.CruiseShip;
-import src.part3.core.Ship;
+import part3.core.CargoShip;
+import part3.core.CruiseShip;
+import part3.core.Ship;
 
 public class PolymorphismDriver {
     static Ship[] ship_arr = new Ship[3];

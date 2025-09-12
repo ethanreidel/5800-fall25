@@ -1,4 +1,4 @@
-package src.part4.core;
+package part4.core;
 
 public class Textbook {
     private String title;

@@ -1,10 +1,10 @@
-package src.part4;
+package part4;
 
 import java.util.ArrayList;
 
-import src.part4.core.Course;
-import src.part4.core.Instructor;
-import src.part4.core.Textbook;
+import part4.core.Course;
+import part4.core.Instructor;
+import part4.core.Textbook;
 
 public class AggregationDriver {
     public static void main(String[] args) {
