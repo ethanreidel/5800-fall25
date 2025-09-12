@@ -10,8 +10,8 @@ public class CommissionEmployee extends Employee {
         this.gross_sales = gross_sales;
     }
 
-    public void set_com_rate(int com_rate) {this.com_rate = com_rate;}
-    public void set_gross_sales(int gross_sales) {this.gross_sales = gross_sales;}
+    public void set_com_rate(double com_rate) {this.com_rate = com_rate;}
+    public void set_gross_sales(double gross_sales) {this.gross_sales = gross_sales;}
 
     public double get_com_rate() {return this.com_rate;}
     public double get_gross_sales() {return this.gross_sales;}

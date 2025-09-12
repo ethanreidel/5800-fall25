@@ -18,7 +18,7 @@ public class HourlyEmployee extends Employee{
 
     @Override
     public String toString() {
-        return String.format("Hourly Employee: %s %s. SSN: %s. Wage: $%d. Number of hours worked: %s",
+        return String.format("Hourly Employee: %s %s. SSN: %s. Wage: $%d. Number of hours worked: %d",
         get_first_name(), get_last_name(), get_ssn(), wage, hours_worked);
     }
 }
