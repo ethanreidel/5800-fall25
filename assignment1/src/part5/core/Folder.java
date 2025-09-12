@@ -59,13 +59,11 @@ public class Folder {
     public void printChildren(Folder current, int depth) {
         System.out.print("\t".repeat(depth));
         System.out.println(String.format("/%s", current.name));
-        if (current.child_folders.isEmpty()) {
-            return;
-        } else {
-            for (Folder child : current.child_folders) {
-                printChildren(child, depth+1);
-            }
+        
+        for (Folder child : current.child_folders) {
+            printChildren(child, depth+1);
         }
+        
         if (!current.file_list.isEmpty()){
             for (File file: current.file_list) {
                 System.out.print("\t".repeat(depth+1));
