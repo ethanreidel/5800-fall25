@@ -30,10 +30,7 @@ public class InterfaceDriver {
             System.out.println(person);
             total_payout += person.calculatePayment();
         }
-        System.out.println("Total payout: $" + total_payout);
+        System.out.printf("Total payout: $%,.2f%n", total_payout);
 
     }
-
-    
-
 }
