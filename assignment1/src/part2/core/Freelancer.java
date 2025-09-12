@@ -9,8 +9,8 @@ public class Freelancer implements Payable{
     public Freelancer(String first_name, String last_name, double hourly_rate, double hours_worked) {
         this.first_name = first_name;
         this.last_name = last_name;
-        this.hourly_rate = hourly_rate;
-        this.hours_worked = hours_worked;
+        set_hourly_rate(hourly_rate);
+        set_hours_worked(hours_worked);
     }
 
     public void set_first_name(String first_name) {this.first_name = first_name;}

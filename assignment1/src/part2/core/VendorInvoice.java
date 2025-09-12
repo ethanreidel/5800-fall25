@@ -8,7 +8,7 @@ public class VendorInvoice implements Payable{
     public VendorInvoice(String vendor_name, String invoice_number, double amount_due) {
         this.vendor_name = vendor_name;
         this.invoice_number = invoice_number;
-        this.amount_due = amount_due;
+        set_amount_due(amount_due);
     }
 
     public void set_vendor_name(String vendor_name) {this.vendor_name = vendor_name;}
