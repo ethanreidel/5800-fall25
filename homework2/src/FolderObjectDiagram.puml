@@ -1,0 +1,46 @@
+@startuml
+top to bottom direction
+
+' Root folder
+object "root : Folder" as root
+root : name = "php_demo1"
+
+object "fSource : Folder" as fSource
+fSource : name = "Source Files"
+
+object "fInclude : Folder" as fInclude
+fInclude : name = "Include Path"
+
+object "fRemote : Folder" as fRemote
+fRemote : name = "Remote Files"
+
+object "fPhalcon : Folder" as fPhalcon
+fPhalcon : name = ".phalcon"
+
+object "fCache : Folder" as fCache
+fCache : name = "cache"
+
+object "fPublic : Folder" as fPublic
+fPublic : name = "public"
+
+object "file1 : File" as file1
+file1 : name = ".htaccess"
+
+object "file2 : File" as file2
+file2 : name = ".htrouter.php"
+
+object "file3 : File" as file3
+file3 : name = "index.html"
+
+root -- fSource : subfolders
+root -- fInclude : subfolders
+root -- fRemote : subfolders
+
+fSource -- fPhalcon : subfolders
+fSource -- fCache   : subfolders
+fSource -- fPublic  : subfolders
+
+fPublic -- file1 : files
+fPublic -- file2 : files
+fPublic -- file3 : files
+@enduml
