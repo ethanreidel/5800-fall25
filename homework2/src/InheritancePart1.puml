@@ -1,0 +1,57 @@
+@startuml
+abstract class Employee {
+  - string firstName
+  - string lastName
+  - string socialSecurityNumber
+  --
+  + Employee(firstName: string, lastName: string, ssn: string)
+  + getFirstName(): string
+  + setFirstName(value: string): void
+  + getLastName(): string
+  + setLastName(value: string): void
+  + getSocialSecurityNumber(): string
+}
+
+class SalariedEmployee {
+  - decimal weeklySalary
+  --
+  + SalariedEmployee(firstName: string, lastName: string, ssn: string, weeklySalary: decimal)
+  + getWeeklySalary(): decimal
+  + setWeeklySalary(value: decimal): void
+}
+
+class HourlyEmployee {
+  - decimal hourlyWage
+  - double hoursWorked
+  --
+  + HourlyEmployee(firstName: string, lastName: string, ssn: string, hourlyWage: decimal, hoursWorked: double)
+  + getHourlyWage(): decimal
+  + setHourlyWage(value: decimal): void
+  + getHoursWorked(): double
+  + setHoursWorked(value: double): void
+}
+
+class CommissionEmployee {
+  - double commissionRate  ' 0.0..1.0
+  - decimal grossSales
+  --
+  + CommissionEmployee(firstName: string, lastName: string, ssn: string, commissionRate: double, grossSales: decimal)
+  + getCommissionRate(): double
+  + setCommissionRate(value: double): void
+  + getGrossSales(): decimal
+  + setGrossSales(value: decimal): void
+}
+
+class BaseEmployee {
+  - decimal baseSalary
+  --
+  + BaseEmployee(firstName: string, lastName: string, ssn: string, baseSalary: decimal)
+  + getBaseSalary(): decimal
+  + setBaseSalary(value: decimal): void
+}
+
+Employee <|-- SalariedEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- CommissionEmployee
+Employee <|-- BaseEmployee
+@enduml

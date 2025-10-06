@@ -1,0 +1,19 @@
+@startuml
+top to bottom direction
+
+object "c1 : Course" as c1
+c1 : name = "CS5800 - Advanced Software Engineering"
+
+object "c1Instructor : Instructor" as i1
+i1 : firstName = "Nima"
+i1 : lastName = "Davarpanah"
+i1 : officeNumber = "3-2636"
+
+object "c1Textbook : Textbook" as t1
+t1 : author = "Robert Cecil Martin"
+t1 : publisher = "Pearson"
+t1 : title = "CleanCode:A Handbook of Agile Software Craftsmanship"
+
+c1 -- i1 : instructor
+c1 -- t1 : textbook
+@enduml

@@ -1,0 +1,49 @@
+@startuml
+top to bottom direction
+
+class Course {
+  - string courseName
+  - Instructor[2] instructors
+  - Textbook[2]  textbooks
+  --
+  + Course(courseName: string, instructors: Instructor[2], textbooks: Textbook[2])
+  + getCourseName(): string
+  + setCourseName(value: string): void
+  + getInstructors(): Instructor[2]
+  + setInstructors(values: Instructor[2]): void
+  + getTextbooks(): Textbook[2]
+  + setTextbooks(values: Textbook[2]): void
+  + print(): void
+}
+
+class Instructor {
+  - string firstName
+  - string lastName
+  - string officeNumber
+  --
+  + Instructor(firstName: string, lastName: string, officeNumber: string)
+  + getFirstName(): string
+  + setFirstName(value: string): void
+  + getLastName(): string
+  + setLastName(value: string): void
+  + getOfficeNumber(): string
+  + setOfficeNumber(value: string): void
+}
+
+class Textbook {
+  - string title
+  - string author
+  - string publisher
+  --
+  + Textbook(title: string, author: string, publisher: string)
+  + getTitle(): string
+  + setTitle(value: string): void
+  + getAuthor(): string
+  + setAuthor(value: string): void
+  + getPublisher(): string
+  + setPublisher(value: string): void
+}
+
+Course *-- "2" Instructor : has two
+Course *-- "2" Textbook   : has two
+@enduml
