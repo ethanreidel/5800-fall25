@@ -1,0 +1,15 @@
+@startuml
+title Upload Dataset
+actor "User UI" as UI
+participant "DatasetService" as DS
+participant "Dataset" as D
+participant "Storage (File System/Database)" as ST
+
+UI -> DS : create(name,type,labelColumn,files)
+DS -> D  : new Dataset(name,type,labelColumn)
+DS -> D  : validate()
+DS -> ST : store(files, metadata)
+ST --> DS: storagePath
+DS -> D  : setStoragePath(storagePath)
+DS --> UI: datasetId
+@enduml

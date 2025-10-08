@@ -1,0 +1,39 @@
+@startuml
+title: Start Training (UC 3)
+|User|
+start
+:Click "Train" on ModelConfig;
+|Backend / Services|
+:Create TrainingJob (Queued);
+:Init Model from ModelConfig;
+:Init DataLoader(train split);
+:Mark job Running;
+
+repeat
+  :Begin epoch;
+  repeat
+    :Fetch batch (DataLoader);
+    |NN Library|
+    :Forward pass (Model);
+    :Compute loss;
+    :Backward + optimizer step;
+    |Backend / Services|
+    :Metrics.logEpoch/update;
+  repeat while (more batches?) is (yes)
+  if (user paused?) then (yes)
+    :Set state = Paused; wait Resume;
+  else (no)
+  endif
+  if (user cancelled?) then (yes)
+    :Set state = Cancelled;
+    stop
+  else (no)
+  endif
+repeat while (more epochs?) is (yes)
+
+:Persist ModelArtifact (weights/state);
+:Mark job Completed;
+|User UI|
+:Display final metrics & link to artifact;
+stop
+@enduml

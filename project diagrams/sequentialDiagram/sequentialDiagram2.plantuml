@@ -1,0 +1,21 @@
+@startuml
+title Evaluate 
+actor "User UI" as UI
+participant "EvaluationService" as EV
+participant "ModelArtifact" as ART
+participant "DataLoader" as DL
+participant "Model" as M
+participant "ConfusionMatrix" as CM
+
+UI -> EV : evaluate(jobId)
+EV -> ART: loadFrom(jobId)
+EV -> DL : init(artifact.dataset, split=\"test\", batchSize, shuffle=false)
+EV -> M  : load(ART)
+
+loop for each test batch
+  EV -> M  : forward(features)
+  EV -> CM : accumulate(actual, predicted)
+end
+
+EV --> UI : EvaluationResult{accuracy, confusionMatrix}
+@enduml
