@@ -1,0 +1,203 @@
+@startuml
+title: Project Class Diagram
+class ModelConfig {
+    - String modelType
+    - Layers[] layers
+    - Activations[] activations
+    - Optimizer optim
+    - Hyperparameter[] hyperparams
+    - Dataset dataset
+
+    +void define(String modelType, Layers[] layers, \nActivations[] activations, Optimizer optim, \nHyperparameter[] hyperparams, Dataset Dataset)
+    +void save()
+}
+
+class Dataset {
+    - String name
+    - String type
+    - Column labelColumn
+    - File files
+
+    void create(String name, String type, Column labelColumn, File files)
+    void validate()
+    void store()
+}
+
+class Model {
+    - ModelConfig config
+    - ModelArtifact loadedArtifact
+    + void build(ModelConfig config)
+    + float[] forward(float[] features)
+    + void load(ModelArtifact artifact)
+    + ModelArtifact save()
+}
+
+class TrainingJob {
+    - String id
+    - JobState state
+    - int currentEpoch
+    - int totalEpochs
+    - Metrics metrics
+    - ModelArtifact artifact
+    - ModelConfig config
+
+    + void start()
+    + void pause()
+    + void resume()
+    + void cancel()
+}
+
+enum JobState {
+    QUEUED
+    RUNNING
+    PAUSED
+    CANCELLED
+    COMPLETED
+    FAILED
+}
+
+class Trainer {
+    + Metrics train(TrainingJob job)
+    + void pause(TrainingJob job)
+    + void resume(TrainingJob job)
+    + void cancel(TrainingJob job)
+}
+
+class DataLoader {
+    - Dataset dataset
+    - String split
+    - int batchSize
+    - boolean shuffle
+
+    + void init(Dataset dataset, String split, int batchSize, boolean shuffle)
+    + boolean hasNext()
+    + Batch next()
+}
+
+class Batch {
+    - float[][] features
+    - int[] labels
+}
+
+class Metrics {
+    - List<EpochMetric> history
+
+    + void logEpoch(int epoch, float loss, float accuracy)
+    + List<EpochMetric> history()
+}
+
+class EpochMetric {
+    - int epoch
+    - float loss
+    - float accuracy
+}
+
+class ModelArtifact {
+    - String format
+    - File path
+    - Date createdAt
+    - String modelConfigId
+
+    + File export(String format)
+    + static ModelArtifact load(File path)
+}
+
+class EvaluationService {
+    + EvaluationResult run(ModelArtifact artifact, Dataset testSplit)
+}
+
+class EvaluationResult {
+    - float accuracy
+    - ConfusionMatrix cm
+    - Date createdAt
+
+    + float accuracy()
+    + ConfusionMatrix confusionMatrix()
+}
+
+class ConfusionMatrix {
+    - int[][] counts
+
+    + void accumulate(int actual, int predicted)
+    + float precision(int cls)
+    + float recall(int cls)
+}
+
+class InferenceService {
+    - Model model
+    - ModelArtifact artifact
+
+    + void load(ModelArtifact artifact)
+    + PredictionResult predict(PredictionRequest req)
+}
+
+class PredictionRequest {
+    - float[] features
+}
+
+class PredictionResult {
+    - int label
+    - float[] probabilities
+}
+
+class Layers {
+    - String type
+    - int inDim
+    - int outDim
+}
+
+class Activations {
+    - String type
+}
+
+class Optimizer {
+    - OptimizerType type
+    - float learningRate
+    - float weightDecay
+    - float beta1
+    - float beta2
+}
+
+enum OptimizerType {
+    SGD
+    ADAM
+}
+
+class Hyperparameter {
+    - String name
+    - String value
+}
+
+class Column {
+    - String name
+    - String dtype
+}
+
+ModelConfig "1" --> "1" Dataset : dataset
+
+Model "1" --> "1" ModelConfig : config
+
+TrainingJob "1" --> "1" Model : model
+TrainingJob "1" --> "1" DataLoader : trainLoader
+DataLoader "1" --> "1" Dataset : dataset
+TrainingJob *-- "1" Metrics : metrics
+Metrics *-- "0..*" EpochMetric : history
+TrainingJob o-- "0..1" ModelArtifact : artifact
+
+EvaluationService ..> ModelArtifact : loads
+EvaluationService ..> DataLoader   : uses (test split)
+EvaluationService ..> EvaluationResult : <<creates>>
+EvaluationResult *-- "1" ConfusionMatrix : cm
+
+InferenceService ..> ModelArtifact : loads
+InferenceService "1" --> "1" Model : model
+InferenceService ..> PredictionRequest : <<consumes>>
+InferenceService ..> PredictionResult  : <<returns>>
+
+ModelArtifact ..> Model : loadInto()
+
+ModelConfig *-- "1..*" LayerSpec : layers
+ModelConfig *-- "1" OptimizerSpec : optimizer
+
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+title Config and Training
+actor "User UI" as UI
+participant "TrainingService" as TR
+participant "ModelConfig" as CFG
+participant "Model" as M
+participant "DataLoader" as DL
+participant "Metrics" as MET
+participant "ModelArtifact" as ART
+
+UI -> TR : startTraining(cfgId)
+TR -> CFG : load(cfgId)
+TR -> M   : build(cfg)
+TR -> DL  : init(cfg.dataset, split="train", batchSize, shuffle=true)
+
+loop epoch = 1..N
+  TR -> M   : trainOneEpoch(DL)
+  TR -> MET : log(epoch, loss, acc)
+end
+
+TR -> ART : saveFrom(M)
+TR --> UI : jobId
+@enduml

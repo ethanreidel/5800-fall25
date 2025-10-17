@@ -1,0 +1,20 @@
+@startuml
+title: Evaluate model (UC 5)
+|User UI|
+start
+:Select Completed TrainingJob -> "Evaluate";
+|Backend / Services|
+:Load ModelArtifact;
+:Init DataLoader(test split);
+|NN Library|
+repeat
+  :Forward pass on test batch;
+  |Backend / Services|
+  :Update ConfusionMatrix;
+repeat while (more batches?) is (yes)
+:Compute accuracy from CM;
+:Persist EvaluationResult (accuracy + CM);
+|User UI|
+:Show accuracy and confusion matrix;
+stop
+@enduml

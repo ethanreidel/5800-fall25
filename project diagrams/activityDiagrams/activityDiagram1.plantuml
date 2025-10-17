@@ -1,0 +1,20 @@
+@startuml
+title Upload Dataset (UC 1)
+|User UI|
+start
+:Click "New Dataset";
+:Select file(s), type, label column;
+|Backend|
+:Validate dataset/label;
+if (valid?) then (yes)
+  :Store files & metadata;
+  :Create Dataset entry;
+  |User UI|
+  :Show "Dataset ready";
+  stop
+else (no)
+  |User UI|
+  :Show validation errors;
+  stop
+endif
+@enduml

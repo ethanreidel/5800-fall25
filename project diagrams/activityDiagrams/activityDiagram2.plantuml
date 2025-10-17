@@ -1,0 +1,31 @@
+@startuml
+title Define ModelConfig (UC 2)
+|User|
+start
+:Click "model type" from dropdown;
+:Select layers, activations, optimizer, etc;
+:Select existing dataset;
+:Click "Save";
+
+|Backend|
+:Build ModelConfig object;
+:Validate ModelConfig parameters;
+
+if (valid?) then (yes)
+    :Persist ModelConfig;
+    :Return success
+else (no)
+    :Return validation error;
+endif
+
+|User|
+if (errors?) then (yes)
+    :Show validation;
+    :Edit parameters;
+    :Back to model parameter selection;
+    -down-> back to "Set layers, activations, optimizer, hyperparams";
+else (no)
+    :Show "ModelConfig saved";
+    stop
+endif
+@enduml
