@@ -1,0 +1,16 @@
+Character: H, Attributes: Helvetica, Crimson, 12
+Character: e, Attributes: Helvetica, Crimson, 12
+Character: l, Attributes: Helvetica, Crimson, 12
+Character: l, Attributes: Helvetica, Crimson, 12
+Character: o, Attributes: Helvetica, Crimson, 12
+Character: W, Attributes: Segoe UI, RoyalBlue, 16
+Character: o, Attributes: Segoe UI, RoyalBlue, 16
+Character: r, Attributes: Segoe UI, RoyalBlue, 16
+Character: l, Attributes: Segoe UI, RoyalBlue, 16
+Character: d, Attributes: Segoe UI, RoyalBlue, 16
+Character: C, Attributes: Palatino, DarkGreen, 14
+Character: S, Attributes: Palatino, DarkGreen, 14
+Character: 5, Attributes: Arial, Goldenrod, 12
+Character: 8, Attributes: Arial, Goldenrod, 12
+Character: 0, Attributes: Arial, Goldenrod, 12
+Character: 0, Attributes: Arial, Goldenrod, 12

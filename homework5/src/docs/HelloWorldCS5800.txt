@@ -1,0 +1,16 @@
+Character: H, Attributes: Arial, Red, 12
+Character: e, Attributes: Arial, Red, 12
+Character: l, Attributes: Arial, Red, 12
+Character: l, Attributes: Arial, Red, 12
+Character: o, Attributes: Arial, Red, 12
+Character: W, Attributes: Calibri, Blue, 14
+Character: o, Attributes: Calibri, Blue, 14
+Character: r, Attributes: Calibri, Blue, 14
+Character: l, Attributes: Calibri, Blue, 14
+Character: d, Attributes: Calibri, Blue, 14
+Character: C, Attributes: Verdana, Black, 16
+Character: S, Attributes: Verdana, Black, 16
+Character: 5, Attributes: Arial, Blue, 12
+Character: 8, Attributes: Arial, Blue, 12
+Character: 0, Attributes: Arial, Blue, 12
+Character: 0, Attributes: Arial, Blue, 12

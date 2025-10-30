@@ -1,0 +1,16 @@
+Character: H, Attributes: Times New Roman, Green, 18
+Character: e, Attributes: Times New Roman, Green, 18
+Character: l, Attributes: Times New Roman, Green, 18
+Character: l, Attributes: Times New Roman, Green, 18
+Character: o, Attributes: Times New Roman, Green, 18
+Character: W, Attributes: Courier New, Purple, 10
+Character: o, Attributes: Courier New, Purple, 10
+Character: r, Attributes: Courier New, Purple, 10
+Character: l, Attributes: Courier New, Purple, 10
+Character: d, Attributes: Courier New, Purple, 10
+Character: C, Attributes: Georgia, Orange, 20
+Character: S, Attributes: Georgia, Orange, 20
+Character: 5, Attributes: Tahoma, Brown, 13
+Character: 8, Attributes: Tahoma, Brown, 13
+Character: 0, Attributes: Tahoma, Brown, 13
+Character: 0, Attributes: Tahoma, Brown, 13

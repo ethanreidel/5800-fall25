@@ -1,0 +1,16 @@
+Character: H, Attributes: Arial, Black, 11
+Character: e, Attributes: Arial, Black, 11
+Character: l, Attributes: Arial, Black, 11
+Character: l, Attributes: Arial, Black, 11
+Character: o, Attributes: Arial, Black, 11
+Character: W, Attributes: Calibri, Teal, 15
+Character: o, Attributes: Calibri, Teal, 15
+Character: r, Attributes: Calibri, Teal, 15
+Character: l, Attributes: Calibri, Teal, 15
+Character: d, Attributes: Calibri, Teal, 15
+Character: C, Attributes: Verdana, Red, 18
+Character: S, Attributes: Verdana, Red, 18
+Character: 5, Attributes: Fira Code, Navy, 13
+Character: 8, Attributes: Fira Code, Navy, 13
+Character: 0, Attributes: Fira Code, Navy, 13
+Character: 0, Attributes: Fira Code, Navy, 13
