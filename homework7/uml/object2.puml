@@ -1,0 +1,138 @@
+@startuml
+title Object Diagram 2 - After H and W character properties modified
+
+object readDocumentVerify <<Document>> {
+    characters[0..15]
+}
+
+object factory1 <<CharacterPropertiesFactory>>{
+    flyweights size = 5
+    ' keys include:
+    ' "Arial16Black"
+    ' "Arial14Black"
+    ' "Verdana18Blue"
+    ' "Verdana12Red"
+    ' "Calibri99Blue"
+}
+
+object cpArialBlack16 <<CharacterProperties>> {
+    font = "Arial"
+    color = "Black"
+    size = 16
+}
+
+object cpArialBlack14 <<CharacterProperties>> {
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object cpVerdanaBlue18 <<CharacterProperties>> {
+    font = "Verdana"
+    color = "Blue"
+    size = 18
+}
+
+object cpVerdanaRed12 <<CharacterProperties>> {
+    font = "Verdana"
+    color = "Red"
+    size = 12
+}
+
+object cpCalibriBlue99 <<CharacterProperties>> {
+    font = "Calibri"
+    color = "Blue"
+    size = 99
+}
+
+readDocumentVerify *-- factory
+
+object c0 <<Character>> {
+    character = 'H'
+}
+object c1 <<Character>> {
+    character = 'e'
+}
+object c2 <<Character>> {
+    character = 'l'
+}
+object c3 <<Character>> {
+    character = 'l'
+}
+object c4 <<Character>> {
+    character = 'o'
+}
+object c5 <<Character>> {
+    character = 'W'
+}
+object c6 <<Character>> {
+    character = 'o'
+}
+object c7 <<Character>> {
+    character = 'r'
+}
+object c8 <<Character>> {
+    character = 'l'
+}
+object c9 <<Character>> {
+    character = 'd'
+}
+object c10 <<Character>> {
+    character = 'C'
+}
+object c11 <<Character>> {
+    character = 'S'
+}
+object c12 <<Character>> {
+    character = '5'
+}
+object c13 <<Character>> {
+    character = '8'
+}
+object c14 <<Character>> {
+    character = '0'
+}
+object c15 <<Character>> {
+    character = '0'
+}
+
+readDocumentVerify *-- c0
+readDocumentVerify *-- c1
+readDocumentVerify *-- c2
+readDocumentVerify *-- c3
+readDocumentVerify *-- c4
+readDocumentVerify *-- c5
+readDocumentVerify *-- c6
+readDocumentVerify *-- c7
+readDocumentVerify *-- c8
+readDocumentVerify *-- c9
+readDocumentVerify *-- c10
+readDocumentVerify *-- c11
+readDocumentVerify *-- c12
+readDocumentVerify *-- c13
+readDocumentVerify *-- c14
+readDocumentVerify *-- c15
+
+
+c0 --> cpCalibriBlue99
+c5 --> cpCalibriBlue99
+
+c1 --> cpArialBlack14
+c2 --> cpArialBlack14
+c3 --> cpArialBlack14
+c4 --> cpArialBlack14
+c6 --> cpArialBlack14
+c7 --> cpArialBlack14
+c8 --> cpArialBlack14
+c9 --> cpArialBlack14
+
+c10 --> cpVerdanaBlue18
+c11 --> cpVerdanaBlue18
+
+
+c12 --> cpVerdanaRed12
+c13 --> cpVerdanaRed12
+c14 --> cpVerdanaRed12
+c15 --> cpVerdanaRed12
+
+@enduml
